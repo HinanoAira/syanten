@@ -24,7 +24,7 @@
                 for (let i = 0; i < 9; i++) {
                     if (arr1[i] === 0 || arr1[i] === undefined)
                         continue
-                    if (arr1[i] >= 3)
+                    while (arr1[i] >= 3)
                         arr1[i] -= 3, tmp_mentsu++
                     if (arr1[i] > 0) {
                         if (is_jihai) continue
@@ -128,7 +128,7 @@
             let t = []
             t[0] = [...hai_arr[0]], t[1] = [...hai_arr[1]], t[2] = [...hai_arr[2]], t[3] = [...hai_arr[3]]
             t[Math.floor(i / 9)][i % 9] -= arr[i] >= 2 ? 2 : arr[i]
-            search(t[0]) && search(t[1]) && search(t[2]) && search(t[3], true) && calc()
+            search(t[0]) && search(t[1]) && search(t[2]) && search(t[3], false) && calc()
         }
         return res
     }
